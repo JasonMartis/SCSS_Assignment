@@ -1,0 +1,314 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: "Lato", sans-serif;
+  background: #c3cfe2;
+}
+
+a {
+  text-decoration: none;
+}
+
+#part1,
+#part2 {
+  padding: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#part3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+h1 {
+  margin: 3em 0;
+}
+
+/* 1. NAVBAR  */
+/* 2. PART 1 - CARD */
+/* 3. PART 2 - PORTFOLIO GRID  */
+/* =================
+    1. NAVBAR
+================= */
+nav {
+  position: fixed;
+  z-index: 1000;
+  width: 100vw;
+  height: 7vh;
+  background: url(nav3.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+nav li {
+  list-style: none;
+}
+nav li:nth-child(2) {
+  padding: 0 15rem;
+}
+nav li a {
+  color: #3c3744;
+  font-weight: bold;
+  font-size: large;
+  background-color: #c3cfe2;
+  padding: 0.3rem;
+  border-radius: 10px;
+}
+nav li a:hover {
+  background-color: #686de0;
+  color: white;
+}
+
+/*======================
+    2. PART 1 - CARD
+======================== */
+.card {
+  background: white;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 37.5em;
+  line-height: 1.6;
+}
+
+.card-info {
+  padding: 5em;
+  width: 37.5em;
+  height: 500px;
+  font-weight: bold;
+}
+
+.card-footer {
+  position: relative;
+  background: #686de0;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  width: 37.5em;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-footer a {
+  color: #c3cfe2;
+}
+
+.card-img {
+  position: absolute;
+  width: 12.5em;
+  height: 12.5em;
+  border-color: white;
+  border-radius: 50%;
+  border: 5px solid white;
+  background: white;
+  top: -25%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+}
+
+/* =================================
+    PART 2 - PORTFOLIO GRID 
+================================= */
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(3, 12em);
+  grid-template-rows: repeat(3, 12em);
+  grid-gap: 1em;
+  margin-top: 5em;
+}
+.portfolio img {
+  width: 12em;
+  height: 12em;
+  border: 1px solid white;
+  transition: 0.5s ease-out;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven,
+.eight {
+  position: relative;
+}
+
+.read-more {
+  transition: 0.5s ease-out;
+  background: #686de0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12em;
+  height: 12em;
+  border-radius: 25px;
+  opacity: 0;
+}
+.read-more:hover {
+  opacity: 1;
+}
+
+button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.25em 0.5em;
+}
+
+/* =================================
+    PART 3 - SOCIAL MEDIA BUTTONS 
+================================= */
+.social-container {
+  max-width: 100vw;
+  position: relative;
+  height: 35em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.social-container .social-media {
+  color: white;
+}
+.social-container .social-media a {
+  color: white;
+  margin-left: 2.5em;
+  font-size: small;
+}
+
+.blog,
+.facebook,
+.twitter,
+.github,
+.linkedin {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 5em;
+  height: 5em;
+  transition: 1.5s;
+  transition-timing-function: ease;
+  width: 15em;
+  right: -10em;
+}
+.blog:hover,
+.facebook:hover,
+.twitter:hover,
+.github:hover,
+.linkedin:hover {
+  right: 0;
+}
+
+.blog {
+  background-color: #e17b77;
+  bottom: 25em;
+}
+
+.facebook {
+  background-color: #3b5998;
+  bottom: 10em;
+}
+
+.twitter {
+  background-color: #00aced;
+  bottom: 20em;
+}
+
+.github {
+  background-color: #333;
+  bottom: 5em;
+}
+
+.linkedin {
+  background-color: #007bb6;
+  bottom: 15em;
+}
+
+/* =================================
+          MEDIA QUERIES 
+================================= */
+@media only screen and (max-width: 600px) {
+  /* NAVBAR  */
+  nav ul li:nth-child(2) {
+    padding: 0 3rem;
+  }
+  /* 2. PART 1 - CARD */
+  .card,
+.card-info,
+.card-footer {
+    width: 25em;
+  }
+  .card-img {
+    width: 9em;
+    height: 9em;
+    top: -15%;
+    transform: translate(-50%, -15%);
+  }
+  .card-info {
+    padding: 2em;
+  }
+  /* PART 2 - PORTFOLIO GRID  */
+  .portfolio {
+    display: grid;
+    grid-template-columns: repeat(2, 15em);
+    grid-template-rows: repeat(4, 15em);
+    grid-gap: 1em;
+  }
+  .portfolio img,
+.read-more {
+    width: 15em;
+    height: 15em;
+  }
+}
+@media only screen and (max-width: 401px) {
+  /* 2. PART 1 - CARD */
+  .card,
+.card-info,
+.card-footer {
+    width: 20em;
+  }
+}
+@media only screen and (max-width: 501px) {
+  /* PART 2 - PORTFOLIO GRID  */
+  .portfolio {
+    display: grid;
+    grid-template-columns: 18em;
+    grid-template-rows: repeat(8, 18em);
+    grid-gap: 1em;
+  }
+  .portfolio img,
+.read-more {
+    width: 18em;
+    height: 18em;
+  }
+}/*# sourceMappingURL=style.css.map */

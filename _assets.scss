@@ -1,0 +1,18 @@
+// VARIABLES
+$backgroundColorMain: #c3cfe2;
+$backgroundColorContent: #686de0;
+$borderRadius: 25px;
+
+// MIXINS
+@mixin flexCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin centerContent {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
